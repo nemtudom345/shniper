@@ -16,6 +16,6 @@ echo "Drop time: $sleepTime"
 waitTime="$(echo $sleepTime - $delay | bc -l)"
 echo "Waiting: $waitTime"
 sleep $waitTime
-( curl -I -X PUT --header "Bearer $bearer" "https://api.minecraftservices.com/minecraft/profile/name/$username" | tee request1.log ; date +%s%N | cut -b1-13 ) &
-curl -I -X PUT --header "Bearer $bearer" "https://api.minecraftservices.com/minecraft/profile/name/$username" | tee request2.log
+( curl -Is -X PUT --header "Bearer $bearer" "https://api.minecraftservices.com/minecraft/profile/name/$username" | tee request1.log ; date +%s%N | cut -b1-13 ) &
+curl -Is -X PUT --header "Bearer $bearer" "https://api.minecraftservices.com/minecraft/profile/name/$username" | tee request2.log
 date +%s%N | cut -b1-13
