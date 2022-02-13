@@ -1,0 +1,3 @@
+curl  - for sending requests
+jq    - for parsing json data
+bc    - for doing what bash can't, divide decimals
